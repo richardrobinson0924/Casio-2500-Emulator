@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="En">
+<head>
+  <meta charset="UTF-8">
+  <title> Calculator </title>
+  <link rel="stylesheet" type="text/css" href="calc.css" title="style" />
+	<link rel="stylesheet" type="text/css" href="fonts/stylesheet.css" title="style" />
+  <script src="calc.js"></script>
+</head>
+<body>
+  <header>
+    <h1> CASIO TX-250 </h1>
+  </header>
+  
+	<div class="calculator">
+		<div class="calcDisplay" id="calcDisplay">
+
+		</div>
+		<div class="calcKeypad">
+			<button onclick=display('7')>7</button>
+			<button onclick="display('8')">8</button>
+			<button onclick="display('9')">9</button>
+			<button class="ckey" data-action="clear">C</button>
+			<button class="acKey" data-action="clear" onclick=clear()>AC</button>
+			<button onclick=display('4')>4</button>
+			<button onclick=display('5')>5</button>
+			<button onclick=display('6')>6</button>
+			<button class="opKey" data-action="multiply" onclick=onOperator("*")>&times;</button>
+			<button class="opKey" data-action="divide" onclick=onOperator("/")>&divide;</button>
+			<button onclick=display('1')>1</button>
+			<button onclick=display('2')>2</button>
+			<button onclick=display('3')>3</button>
+			<button class="opKey" data-action="add" onclick=onOperator("+")>+</button>
+			<button class="opKey" data-action="subtract" onclick=onOperator("-")>&minus;</button>
+			<button class="zeroKey" onclick=display(0)>0</button>
+			<button data-action="decimal" onclick=display('.')>.</button>
+			<button class="exp">EXP</button>
+			<button class="eqKey" data-action="calculate" onclick=onEquals()>=</button>
+			<button class="exp">M+</button>
+
+		</div>
+	</div>
+	  
+  <footer>&copy Author: <span>Andriy Pavlovych</span> </footer>
+</body>
+</html>

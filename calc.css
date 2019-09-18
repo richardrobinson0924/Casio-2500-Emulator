@@ -21,6 +21,37 @@ body {
 	height: 98vh;
 }
 
+.logo {
+	margin-right: 0;
+	margin-left: auto;
+}
+
+.logo1 {
+	margin-right: 0;
+	font-family: casio, sans-serif;
+	text-align: right;
+	font-size: 25px;
+}
+
+.logo2 {
+	margin-right: 0;
+	margin-left: auto;
+	font-family: serif;
+
+	font-style: italic;
+
+	font-size: 45px;
+
+	text-align: right;
+}
+
+.subtext {
+	color: #0097be;
+	font-family: casio, sans-serif;
+	text-align: right;
+	font-size: 14px;
+}
+
 div {
 	/*border:1px solid SlateGrey;*/
 	border-radius: 5px;
@@ -32,9 +63,10 @@ div.calcDisplay {
 	border: 2px solid #b4b39d;
 	border-radius: 6px;
 	background-color: #c3c2ab;
-	font-size: 1.75em;
+	font-size: 2.0em;
 	padding: 0.5em 0.75em;
 	text-align: right;
+	height: 100px;
 }
 
 header {
@@ -44,7 +76,7 @@ header {
 }
 
 div.calcKeypad {
-	height: 60%;
+	height: 40%;
 	margin: 20px;
 }
 
@@ -53,7 +85,7 @@ div.calcKeypad {
 
 	height: 410px;
 	width: 300px;
-	margin-top: 10%;
+	margin-top: 0%;
 	margin-left: auto;
 	margin-right: auto;
 	/*background-color: #dfd8d0;*/
@@ -75,8 +107,7 @@ div.calcKeypad {
 }
 
 .calcExtras {
-	height: 25%;
-	margin: 20px;
+	margin: 5px;
 	display: grid;
 	grid-gap: 0px;
 	grid-template-columns: repeat(6, 16.67%);
@@ -87,6 +118,8 @@ div.calcKeypad {
 .extraArea {
 	justify-items: center;
 	align-items: center;
+	padding: 0px;
+	margin: 0;
 }
 
 p {
@@ -96,6 +129,8 @@ p {
 }
 
 .button {
+	height: 30px;
+	width: 50px;
 	border-radius: 3px;
 	background-color: white;
 	box-shadow: 0 3px 0 0 #cec8c8, inset -1px -3px 10px 1px #bebebe;
@@ -114,9 +149,9 @@ button {
 	border-radius: 8px 5px 5px 8px;
 	border: none;
 	background-color: #272226;
-	margin: 0 4px 10px 8px;
-	height: 40px;
-	width: 50px;
+	margin: 0 0px 0px 0px;
+	height: 50px;
+	width: 60px;
 	box-shadow: 0 3px 0 0 #222121, inset -1px -3px 10px 1px #515151;
 }
 
@@ -145,7 +180,7 @@ footer {
 [class*="calculator"] {
 	width: 80%;
 	display: inline-block;
-	height: 60vh;
+	height: 80vh;
 	font-size: 1.2em;
 }
 

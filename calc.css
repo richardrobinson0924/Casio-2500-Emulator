@@ -21,9 +21,16 @@ body {
 	height: 98vh;
 }
 
-.logo {
-	margin-right: 0;
-	margin-left: auto;
+.logo:before {
+	display: inline-block;
+	content: "";
+	height: 3px;
+	background-color: #606060;
+	position: absolute;
+	width: 16%;
+	top: 28%;
+	margin-top: -18px;
+	margin-left: -230px;
 }
 
 .logo1 {
@@ -78,6 +85,7 @@ header {
 div.calcKeypad {
 	height: 40%;
 	margin: 20px;
+	/*padding-left: 0px;*/
 }
 
 .calculator {
@@ -92,6 +100,8 @@ div.calcKeypad {
 	border: 2px solid #908b85;
 	border-radius: 10px;
 	box-shadow: 7px 10px 34px 1px rgba(0, 0, 0, 0.68), inset -1px -6px 12px 0.1px #89847e;
+	
+	inset: 100px;
 }
 
 .input {
@@ -107,7 +117,7 @@ div.calcKeypad {
 }
 
 .calcExtras {
-	margin: 5px;
+	margin: 20px;
 	display: grid;
 	grid-gap: 0px;
 	grid-template-columns: repeat(6, 16.67%);
@@ -125,12 +135,15 @@ div.calcKeypad {
 p {
 	text-align: center;
 	padding: 0px;
+	font-size: 12px;
 	color: white;
+	margin-bottom: 5px;
+	font-weight: bold;
 }
 
 .button {
-	height: 30px;
-	width: 50px;
+	height: 22px;
+	width: 45px;
 	border-radius: 3px;
 	background-color: white;
 	box-shadow: 0 3px 0 0 #cec8c8, inset -1px -3px 10px 1px #bebebe;
@@ -145,14 +158,15 @@ input, button {
 }
 
 button {
-	font-family: monospace;
+	font-family: calc, monospace;
+	font-size: 19px;
 	border-radius: 8px 5px 5px 8px;
 	border: none;
 	background-color: #272226;
 	margin: 0 0px 0px 0px;
 	height: 50px;
 	width: 60px;
-	box-shadow: 0 3px 0 0 #222121, inset -1px -3px 10px 1px #515151;
+	box-shadow: 1px 4px 0 0 #222121, inset -1px -3px 10px 1px #515151;
 }
 
 button:active {

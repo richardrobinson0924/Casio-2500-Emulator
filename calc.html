@@ -15,15 +15,35 @@
 	<div class="calculator">
 		<div class="calcDisplay" id="calcDisplay">
 		</div>
-		<div style="display: block">
-			<div style="align-content: end; text-align: right">
-				<span class="logo1">CASIO </span> <span class="logo2" > fx-2500</span>
+			<div class="logo" style="display: block; margin-bottom: 40px; margin-right: 20px">
+				<div style="align-content: end; text-align: right; padding: 0; margin-bottom: 0">
+					<span class="logo1">CASIO </span> <span class="logo2" > fx-2500</span>
+				</div>
+				<div class="subtext" style="text-align: right; padding: 0; margin-top: 0">SCIENTIFIC CALCULATOR</div>
 			</div>
-			<div class="subtext" style="text-align: right">SCIENTIFIC CALCULATOR</div>
-		</div>
 		<div class="calcExtras">
 			<div class="extraArea">
-				<p class="extrasText">ON</p>
+				<p class="extrasText">A</p>
+				<button class="button"></button>
+				<p class="extrasText2"></p>
+			</div>
+			<div class="extraArea">
+				<p class="extrasText">INV</p>
+				<button class="button"></button>
+				<p class="extrasText2"></p>
+			</div>
+			<div class="extraArea">
+				<p class="extrasText">MODE</p>
+				<button class="button"></button>
+				<p class="extrasText2"></p>
+			</div>
+			<div class="extraArea">
+				<p class="extrasText"><span>log </span> <span style="font-weight: bold; color: #a92f00"> 10ˣ</span></p>
+				<button class="button"></button>
+				<p class="extrasText2"></p>
+			</div>
+			<div class="extraArea">
+				<p class="extrasText"><span>ln </span> <span style="font-weight: bold; color: #a92f00; font-size: 12px; vertical-align: baseline"> eˣ</span></p>
 				<button class="button"></button>
 				<p class="extrasText2"></p>
 			</div>
@@ -38,28 +58,8 @@
 				<p class="extrasText2"></p>
 			</div>
 			<div class="extraArea">
-				<p class="extrasText">ON</p>
-				<button class="button"></button>
-				<p class="extrasText2"></p>
-			</div>
-			<div class="extraArea">
-				<p class="extrasText">ON</p>
-				<button class="button"></button>
-				<p class="extrasText2"></p>
-			</div>
-			<div class="extraArea">
-				<p class="extrasText">ON</p>
-				<button class="button"></button>
-				<p class="extrasText2"></p>
-			</div>
-			<div class="extraArea">
-				<p class="extrasText">ON</p>
-				<button class="button"></button>
-				<p class="extrasText2"></p>
-			</div>
-			<div class="extraArea">
-				<p class="extrasText">ON</p>
-				<button class="button"></button>
+				<p class="extrasText"><span>&radic; </span> <span style="font-weight: bold; color: #a92f00"> x&sup2;</span></p>
+				<button class="button" onclick=onOperator("sqrt")></button>
 				<p class="extrasText2"></p>
 			</div>
 			<div class="extraArea">
@@ -117,8 +117,8 @@
 			<button onclick=display('7')>7</button>
 			<button onclick="display('8')">8</button>
 			<button onclick="display('9')">9</button>
-			<button class="ckey" data-action="clear">C</button>
-			<button class="acKey" data-action="clear" onclick=clear()>AC</button>
+			<button class="ckey">C</button>
+			<button data-action="clear" onclick="clear_s()">AC</button>
 			<button onclick=display('4')>4</button>
 			<button onclick=display('5')>5</button>
 			<button onclick=display('6')>6</button>

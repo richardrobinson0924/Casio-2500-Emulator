@@ -30,6 +30,10 @@ document.addEventListener('keypress', (e) => {
 			onEquals();
 			break;
 
+		case "c":
+			clear_s();
+			break;
+
 		default:
 			return;
 	}
@@ -37,6 +41,10 @@ document.addEventListener('keypress', (e) => {
 
 function display(val) {
 	if (equalsLastPressed) currentDisplayed = "";
+
+	if (!operatorLastPressed && !equalsLastPressed && document.getElementById("calcDisplay").innerText.length >= 10) {
+		return;
+	}
 
 	if (operatorLastPressed || equalsLastPressed) {
 		document.getElementById("calcDisplay").innerHTML = val;
@@ -54,30 +62,46 @@ function display(val) {
 function onOperator(op) {
 	if (operatorLastPressed) return;
 
-	document.getElementById("calcDisplay").innerHTML = eval(currentDisplayed);
-	currentDisplayed += op;
+    if (op === "sqrt") {
+        currentDisplayed = (s => s.toString())(Math.sqrt(parseFloat(currentDisplayed)));
+    } else if (op === "sin") {
+        currentDisplayed = (s => s.toString())(Math.sin(parseFloat(currentDisplayed)));
+    } else if (op === "cos") {
+        currentDisplayed = (s => s.toString())(Math.cos(parseFloat(currentDisplayed)));
+    } else if (op === "tan") {
+        currentDisplayed = (s => s.toString())(Math.tan(parseFloat(currentDisplayed)));
+    } else {
+        document.getElementById("calcDisplay").innerHTML = eval(currentDisplayed);
+        currentDisplayed += op;
 
-	operatorLastPressed = true;
-	equalsLastPressed = false;
+        operatorLastPressed = true;
+        equalsLastPressed = false;
+
+        return;
+    }
+
+    document.getElementById("calcDisplay").innerHTML = currentDisplayed;
+    equalsLastPressed = true;
 }
 
 function onEquals() {
 	if (operatorLastPressed) return;
 
-	document.getElementById("calcDisplay").innerHTML = currentDisplayed === ""
-		? 0
-		: eval(currentDisplayed);
+    currentDisplayed = eval(currentDisplayed);
 
-	currentDisplayed = eval(currentDisplayed);
+    document.getElementById("calcDisplay").innerHTML = currentDisplayed.toString().length >= 10
+        ? parseFloat(currentDisplayed).toExponential(5)
+        : currentDisplayed;
+
 
 	equalsLastPressed = true;
 	operatorLastPressed = false;
 }
 
-function clear() {
+function clear_s() {
 	equalsLastPressed = true;
 	operatorLastPressed = true;
 	currentDisplayed = "";
 
-	document.getElementById("calcDisplay").innerHTML = "";
+	document.getElementById("calcDisplay").innerHTML = "0";
 }

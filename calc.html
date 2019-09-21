@@ -1,49 +1,52 @@
+<!-- Copyright c 2019 Richard Robinson. All rights reserved. -->
 <!DOCTYPE html>
 <html lang="En">
 <head>
-  <meta charset="UTF-8">
-  <title> Calculator </title>
-  <link rel="stylesheet" type="text/css" href="calc.css" title="style" />
-	<link rel="stylesheet" type="text/css" href="fonts/stylesheet.css" title="style" />
-  <script src="calc.js"></script>
+    <meta charset="UTF-8">
+    <title> Calculator </title>
+    <link rel="stylesheet" type="text/css" href="calc.css" title="style"/>
+    <link rel="stylesheet" type="text/css" href="fonts/stylesheet.css" title="style"/>
+    <script src="calc.js"></script>
 </head>
 <body>
-  <header>
+<header>
     <h1> CASIO TX-250 </h1>
-  </header>
-  
+</header>
+
+<div style="display: flex; transform: scale(0.75)">
 	<div class="calculator">
-		<div class="calcDisplay" id="calcDisplay">
-		</div>
-			<div class="logo" style="display: block; margin-bottom: 40px; margin-right: 20px">
-				<div style="align-content: end; text-align: right; padding: 0; margin-bottom: 0">
-					<span class="logo1">CASIO </span> <span class="logo2" > fx-2500</span>
-				</div>
-				<div class="subtext" style="text-align: right; padding: 0; margin-top: 0">SCIENTIFIC CALCULATOR</div>
+		<div style="background-color: #c3c2ab; margin-bottom: 0; color: #b4b4b4" class="calcDisplay">8888888888</div>
+		<div class="calcDisplay overlay" id="calcDisplay"></div>
+		<div class="logo" style="display: block; margin-top: 0; margin-bottom: 40px; margin-right: 20px">
+			<div style="align-content: end; text-align: right; padding: 0; margin-bottom: 0">
+				<span class="logo1">CASIO </span> <span class="logo2"> fx-2500</span>
 			</div>
+			<div class="subtext" style="text-align: right; padding: 0; margin-top: 0">SCIENTIFIC CALCULATOR</div>
+		</div>
 		<div class="calcExtras">
-			<div class="extraArea">
+			<div class="r extraArea">
 				<p class="extrasText">A</p>
 				<button class="button"></button>
 				<p class="extrasText2"></p>
 			</div>
-			<div class="extraArea">
+			<div class="r extraArea">
 				<p class="extrasText">INV</p>
 				<button class="button"></button>
 				<p class="extrasText2"></p>
 			</div>
-			<div class="extraArea">
+			<div class="r extraArea">
 				<p class="extrasText">MODE</p>
 				<button class="button"></button>
 				<p class="extrasText2"></p>
 			</div>
-			<div class="extraArea">
+			<div class="r extraArea">
 				<p class="extrasText"><span>log </span> <span style="font-weight: bold; color: #a92f00"> 10ˣ</span></p>
 				<button class="button"></button>
 				<p class="extrasText2"></p>
 			</div>
-			<div class="extraArea">
-				<p class="extrasText"><span>ln </span> <span style="font-weight: bold; color: #a92f00; font-size: 12px; vertical-align: baseline"> eˣ</span></p>
+			<div class="r extraArea">
+				<p class="extrasText"><span>ln </span> <span
+						style="font-weight: bold; color: #a92f00; font-size: 12px; vertical-align: baseline"> eˣ</span></p>
 				<button class="button"></button>
 				<p class="extrasText2"></p>
 			</div>
@@ -52,62 +55,63 @@
 				<button class="button"></button>
 				<p class="extrasText2"></p>
 			</div>
-			<div class="extraArea">
+			<div class="tr extraArea">
 				<p class="extrasText">ON</p>
 				<button class="button"></button>
 				<p class="extrasText2"></p>
 			</div>
-			<div class="extraArea">
-				<p class="extrasText"><span>&radic; </span> <span style="font-weight: bold; color: #a92f00"> x&sup2;</span></p>
+			<div class="tr extraArea">
+				<p class="extrasText"><span>&radic; </span> <span style="font-weight: bold; color: #a92f00"> x&sup2;</span>
+				</p>
 				<button class="button" onclick=onOperator("sqrt")></button>
 				<p class="extrasText2"></p>
 			</div>
-			<div class="extraArea">
+			<div class="tr extraArea">
 				<p class="extrasText">ON</p>
 				<button class="button"></button>
 				<p class="extrasText2"></p>
 			</div>
-			<div class="extraArea">
+			<div class="tr extraArea">
 				<p class="extrasText">ON</p>
 				<button class="button"></button>
 				<p class="extrasText2"></p>
 			</div>
-			<div class="extraArea">
+			<div class="tr extraArea">
 				<p class="extrasText">ON</p>
 				<button class="button"></button>
 				<p class="extrasText2"></p>
 			</div>
-			<div class="extraArea">
+			<div class="top extraArea">
 				<p class="extrasText">ON</p>
 				<button class="button"></button>
 				<p class="extrasText2"></p>
 			</div>
-			<div class="extraArea">
+			<div class="tr extraArea">
 				<p class="extrasText">ON</p>
 				<button class="button"></button>
 				<p class="extrasText2"></p>
 			</div>
-			<div class="extraArea">
+			<div class="tr extraArea">
 				<p class="extrasText">ON</p>
 				<button class="button"></button>
 				<p class="extrasText2"></p>
 			</div>
-			<div class="extraArea">
+			<div class="tr extraArea">
 				<p class="extrasText">ON</p>
 				<button class="button"></button>
 				<p class="extrasText2"></p>
 			</div>
-			<div class="extraArea">
+			<div class="tr extraArea">
 				<p class="extrasText">ON</p>
 				<button class="button"></button>
 				<p class="extrasText2"></p>
 			</div>
-			<div class="extraArea">
+			<div class="tr extraArea">
 				<p class="extrasText">ON</p>
 				<button class="button"></button>
 				<p class="extrasText2"></p>
 			</div>
-			<div class="extraArea">
+			<div class="top extraArea">
 				<p class="extrasText">ON</p>
 				<button class="button"></button>
 				<p class="extrasText2"></p>
@@ -137,7 +141,10 @@
 
 		</div>
 	</div>
-	  
-  <footer>&copy Author: <span>Andriy Pavlovych</span> </footer>
+</div>
+
+
+
+<footer>&copy Author: <span>Andriy Pavlovych</span></footer>
 </body>
 </html>

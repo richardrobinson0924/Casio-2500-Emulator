@@ -27,10 +27,10 @@ body {
 	height: 3px;
 	background-color: #606060;
 	position: absolute;
-	width: 16%;
-	top: 28%;
+	width: 160px;
+	top: 18%;
 	margin-top: -18px;
-	margin-left: -230px;
+	margin-left: -220px;
 }
 
 .logo1 {
@@ -69,11 +69,12 @@ div.calcDisplay {
 	font-family: dseg, monospace;
 	border: 2px solid #b4b39d;
 	border-radius: 6px;
-	background-color: #c3c2ab;
-	font-size: 2.0em;
+	/*background-color: #c3c2ab;*/
+	font-size: 2.5em;
 	padding: 0.5em 0.75em;
 	text-align: right;
 	height: 100px;
+	margin-bottom: -90px;
 }
 
 header {
@@ -88,19 +89,19 @@ div.calcKeypad {
 	/*padding-left: 0px;*/
 }
 
+
 .calculator {
 	background-color: LightGrey;
 
-	height: 410px;
-	width: 300px;
-	margin-top: 0%;
-	margin-left: auto;
-	margin-right: auto;
+
+	height: 950px;
+	width: 500px;
+	margin: -100px auto;
 	/*background-color: #dfd8d0;*/
 	border: 2px solid #908b85;
 	border-radius: 10px;
 	box-shadow: 7px 10px 34px 1px rgba(0, 0, 0, 0.68), inset -1px -6px 12px 0.1px #89847e;
-	
+
 	inset: 100px;
 }
 
@@ -111,16 +112,18 @@ div.calcKeypad {
 
 .calcKeypad {
 	display: grid;
-	grid-gap: 1px;
+	grid-gap: 0px;
 	grid-template-columns: 20% 20% 20% 20% 20%;
 	justify-items: center;
 }
 
 .calcExtras {
+	padding-top: 10px;
+	padding-bottom: 10px;
 	margin: 20px;
 	display: grid;
 	grid-gap: 0px;
-	grid-template-columns: repeat(6, 16.67%);
+	grid-template-columns: repeat(6, 16.66%);
 	justify-items: center;
 	background-color: #222121;
 }
@@ -128,8 +131,9 @@ div.calcKeypad {
 .extraArea {
 	justify-items: center;
 	align-items: center;
-	padding: 0px;
-	margin: 0;
+	padding: 0;
+	margin-top: 0;
+	margin-bottom: 0;
 }
 
 p {
@@ -141,9 +145,36 @@ p {
 	font-weight: bold;
 }
 
+.overlay {
+	position: relative;
+	bottom: 120px;
+	left: 0px;
+	background-color: transparent;
+}
+
+.tr.extraArea {
+	border-right: 1px solid #d9d9d9;
+	border-top: 1px solid #d9d9d9;
+	border-radius: 0;
+}
+
+.top.extraArea {
+	border-top: 1px solid #d9d9d9;
+	border-radius: 0;
+	margin-bottom: 0;
+}
+
+.right.extraArea {
+	border-right: 1px solid #d9d9d9;
+	border-radius: 0;
+	margin-bottom: 0;
+}
+
 .button {
 	height: 22px;
 	width: 45px;
+	margin-left: 15px;
+	margin-right: 15px;
 	border-radius: 3px;
 	background-color: white;
 	box-shadow: 0 3px 0 0 #cec8c8, inset -1px -3px 10px 1px #bebebe;
@@ -191,16 +222,16 @@ footer {
 /* Responsive layout - makes the columns stack on
    top of each other instead of next to each other */
 
-[class*="calculator"] {
-	width: 80%;
-	display: inline-block;
-	height: 80vh;
-	font-size: 1.2em;
-}
+/*[class*="calculator"] {*/
+/*	width: 80%;*/
+/*	display: inline-block;*/
+/*	height: 80vh;*/
+/*	//font-size: 1.2em;*/
+/*}*/
 
-@media screen and (min-width: 600px) {
-	[class*="calculator"] {
-		width: 50%;
-	}
+/*@media screen and (min-width: 600px) {*/
+/*	[class*="calculator"] {*/
+/*		width: 50%;*/
+/*	}*/
 
-}
+/*}*/

@@ -90,7 +90,7 @@ function onEquals() {
     currentDisplayed = eval(currentDisplayed);
 
     document.getElementById("calcDisplay").innerHTML = currentDisplayed.toString().length >= 10
-        ? parseFloat(currentDisplayed).toExponential(5)
+        ? parseFloat(currentDisplayed).toExponential(5).replace("+", "")
         : currentDisplayed;
 
 

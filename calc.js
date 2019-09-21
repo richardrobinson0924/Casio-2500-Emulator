@@ -2,6 +2,13 @@ let currentDisplayed = "",
 	operatorLastPressed = false,
 	equalsLastPressed = false;
 
+const displayResult = () => document.getElementById("calcDisplay").innerHTML = (currentDisplayed.toString().length >= 10
+	? parseFloat(currentDisplayed).toPrecision(9).replace("+", "")
+	: currentDisplayed
+).replace("(?<=\..*)0+$", "");
+
+const toRadians = (angle) => angle * (Math.PI / 180);
+
 document.addEventListener('keypress', (e) => {
 	switch (e.key) {
 		case '1':
@@ -63,15 +70,16 @@ function onOperator(op) {
 	if (operatorLastPressed) return;
 
     if (op === "sqrt") {
-        currentDisplayed = (s => s.toString())(Math.sqrt(parseFloat(currentDisplayed)));
+        currentDisplayed = (s => s.toString())(Math.sqrt(toRadians(parseFloat(currentDisplayed))));
     } else if (op === "sin") {
-        currentDisplayed = (s => s.toString())(Math.sin(parseFloat(currentDisplayed)));
+        currentDisplayed = (s => s.toString())(Math.sin(toRadians(parseFloat(currentDisplayed))));
     } else if (op === "cos") {
-        currentDisplayed = (s => s.toString())(Math.cos(parseFloat(currentDisplayed)));
+        currentDisplayed = (s => s.toString())(Math.cos(toRadians(parseFloat(currentDisplayed))));
     } else if (op === "tan") {
-        currentDisplayed = (s => s.toString())(Math.tan(parseFloat(currentDisplayed)));
+        currentDisplayed = (s => s.toString())(Math.tan(toRadians(parseFloat(currentDisplayed))));
     } else {
-        document.getElementById("calcDisplay").innerHTML = eval(currentDisplayed);
+        //document.getElementById("calcDisplay").innerHTML = eval(currentDisplayed);
+		displayResult();
         currentDisplayed += op;
 
         operatorLastPressed = true;
@@ -80,7 +88,8 @@ function onOperator(op) {
         return;
     }
 
-    document.getElementById("calcDisplay").innerHTML = currentDisplayed;
+  //  document.getElementById("calcDisplay").innerHTML = currentDisplayed;
+	displayResult();
     equalsLastPressed = true;
 }
 
@@ -88,11 +97,7 @@ function onEquals() {
 	if (operatorLastPressed) return;
 
     currentDisplayed = eval(currentDisplayed);
-
-    document.getElementById("calcDisplay").innerHTML = currentDisplayed.toString().length >= 10
-        ? parseFloat(currentDisplayed).toExponential(5).replace("+", "")
-        : currentDisplayed;
-
+    displayResult();
 
 	equalsLastPressed = true;
 	operatorLastPressed = false;

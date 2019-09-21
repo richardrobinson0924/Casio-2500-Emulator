@@ -28,7 +28,7 @@ body {
 	background-color: #606060;
 	position: absolute;
 	width: 160px;
-	top: 18%;
+	top: 26%;
 	margin-top: -18px;
 	margin-left: -220px;
 }
@@ -93,10 +93,9 @@ div.calcKeypad {
 .calculator {
 	background-color: LightGrey;
 
-
 	height: 950px;
 	width: 500px;
-	margin: -100px auto;
+	//margin: -100px auto;
 	/*background-color: #dfd8d0;*/
 	border: 2px solid #908b85;
 	border-radius: 10px;
@@ -225,7 +224,7 @@ footer {
 /*[class*="calculator"] {*/
 /*	width: 80%;*/
 /*	display: inline-block;*/
-/*	height: 80vh;*/
+/*	//height: 80vh;*/
 /*	//font-size: 1.2em;*/
 /*}*/
 

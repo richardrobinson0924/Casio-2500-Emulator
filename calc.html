@@ -13,11 +13,11 @@
     <h1> CASIO FX-2500 </h1>
 </header>
 
-<div style="display: block; transform: scale(0.9)">
+<div style="display: block">
 	<div class="calculator">
 		<div style="background-color: #c3c2ab; margin-bottom: 0; color: #b4b4b4" class="calcDisplay">8888888888</div>
 		<div class="calcDisplay overlay" id="calcDisplay"></div>
-		<div class="logo" style="display: block; margin-top: 0; margin-bottom: 40px; margin-right: 20px">
+		<div class="logo" style="display: block; margin-top: 0; margin-bottom: 2vh; margin-right: 2vh">
 			<div style="align-content: end; text-align: right; padding: 0; margin-bottom: 0">
 				<span class="logo1">CASIO </span> <span class="logo2"> fx-2500</span>
 			</div>
@@ -46,7 +46,7 @@
 			</div>
 			<div class="r extraArea">
 				<p class="extrasText"><span>ln </span> <span
-						style="font-weight: bold; color: #a92f00; font-size: 12px; vertical-align: baseline"> eˣ</span></p>
+						style="font-weight: bold; color: #a92f00; font-size: 1vh; vertical-align: baseline"> eˣ</span></p>
 				<button class="button"></button>
 				<p class="extrasText2"></p>
 			</div>
@@ -118,26 +118,26 @@
 			</div>
 		</div>
 		<div class="calcKeypad">
-			<button onclick=display('7')>7</button>
-			<button onclick="display('8')">8</button>
-			<button onclick="display('9')">9</button>
-			<button class="ckey">C</button>
-			<button data-action="clear" onclick="clear_s()">AC</button>
-			<button onclick=display('4')>4</button>
-			<button onclick=display('5')>5</button>
-			<button onclick=display('6')>6</button>
-			<button class="opKey" data-action="multiply" onclick=onOperator("*")>&times;</button>
-			<button class="opKey" data-action="divide" onclick=onOperator("/")>&divide;</button>
-			<button onclick=display('1')>1</button>
-			<button onclick=display('2')>2</button>
-			<button onclick=display('3')>3</button>
-			<button class="opKey" data-action="add" onclick=onOperator("+")>+</button>
-			<button class="opKey" data-action="subtract" onclick=onOperator("-")>&minus;</button>
-			<button class="zeroKey" onclick=display(0)>0</button>
-			<button data-action="decimal" onclick=display('.')>.</button>
-			<button class="exp">EXP</button>
-			<button class="eqKey" data-action="calculate" onclick=onEquals()>=</button>
-			<button class="exp">M+</button>
+			<button id="7" onclick=display('7')>7</button>
+			<button id="8" onclick="display('8')">8</button>
+			<button id="9" onclick="display('9')">9</button>
+			<button>C</button>
+			<button id="c" onclick="clear_s()">AC</button>
+			<button id="4" onclick=display('4')>4</button>
+			<button id="5" onclick=display('5')>5</button>
+			<button id="6" onclick=display('6')>6</button>
+			<button class="opKey" id="*" onclick=onOperator("*")>&times;</button>
+			<button class="opKey" id="/" onclick=onOperator("/")>&divide;</button>
+			<button id="1" onclick=display('1')>1</button>
+			<button id="2" onclick=display('2')>2</button>
+			<button id="3" onclick=display('3')>3</button>
+			<button class="opKey" id="+" onclick=onOperator("+")>+</button>
+			<button class="opKey" id="-" onclick=onOperator("-")>&minus;</button>
+			<button id="0" onclick=display(0)>0</button>
+			<button id="." onclick=display('.')>.</button>
+			<button>EXP</button>
+			<button id="=" onclick=onEquals()>=</button>
+			<button>M+</button>
 
 		</div>
 	</div>

@@ -24,20 +24,19 @@ body {
 .logo:before {
 	display: inline-block;
 	content: "";
-	height: 3px;
+	height: 0.2vh;
 	background-color: #606060;
 	position: absolute;
-	width: 160px;
-	top: 26%;
-	margin-top: -18px;
-	margin-left: -220px;
+	width: 12vh;
+	top: 32.5vh;
+	margin-left: -18vh;
 }
 
 .logo1 {
 	margin-right: 0;
 	font-family: casio, sans-serif;
 	text-align: right;
-	font-size: 25px;
+	font-size: 2vh;
 }
 
 .logo2 {
@@ -46,9 +45,7 @@ body {
 	font-family: serif;
 
 	font-style: italic;
-
-	font-size: 45px;
-
+	font-size: 3.7vh;
 	text-align: right;
 }
 
@@ -56,13 +53,13 @@ body {
 	color: #0097be;
 	font-family: casio, sans-serif;
 	text-align: right;
-	font-size: 14px;
+	font-size: 1.1vh;
 }
 
 div {
 	/*border:1px solid SlateGrey;*/
 	border-radius: 5px;
-	margin: 20px;
+	margin: 1.6vh;
 }
 
 div.calcDisplay {
@@ -70,11 +67,11 @@ div.calcDisplay {
 	border: 2px solid #b4b39d;
 	border-radius: 6px;
 	/*background-color: #c3c2ab;*/
-	font-size: 2.5em;
+	font-size: 3.5vh;
 	padding: 0.5em 0.75em;
 	text-align: right;
-	height: 100px;
-	margin-bottom: -90px;
+	height: 8vh;
+	margin-bottom: -7vh;
 }
 
 header {
@@ -84,8 +81,8 @@ header {
 }
 
 div.calcKeypad {
-	height: 40%;
-	margin: 20px;
+	height: 30vh;
+	margin: 2vh;
 	/*padding-left: 0px;*/
 }
 
@@ -93,15 +90,14 @@ div.calcKeypad {
 .calculator {
 	background-color: LightGrey;
 
-	height: 950px;
-	width: 500px;
-	//margin: -100px auto;
+	height: 75vh;
+	width: 40vh;
+	/*//margin: -100px auto;*/
 	/*background-color: #dfd8d0;*/
 	border: 2px solid #908b85;
 	border-radius: 10px;
 	box-shadow: 7px 10px 34px 1px rgba(0, 0, 0, 0.68), inset -1px -6px 12px 0.1px #89847e;
 
-	inset: 100px;
 }
 
 .input {
@@ -117,9 +113,9 @@ div.calcKeypad {
 }
 
 .calcExtras {
-	padding-top: 10px;
-	padding-bottom: 10px;
-	margin: 20px;
+	padding-top: 0.5vh;
+	padding-bottom: 0.5vh;
+	margin: 1.5vh;
 	display: grid;
 	grid-gap: 0px;
 	grid-template-columns: repeat(6, 16.66%);
@@ -138,15 +134,15 @@ div.calcKeypad {
 p {
 	text-align: center;
 	padding: 0px;
-	font-size: 12px;
+	font-size: 1.0vh;
 	color: white;
-	margin-bottom: 5px;
+	margin-bottom: 0.9vh;
 	font-weight: bold;
 }
 
 .overlay {
 	position: relative;
-	bottom: 120px;
+	bottom: 9.5vh;
 	left: 0px;
 	background-color: transparent;
 }
@@ -170,10 +166,10 @@ p {
 }
 
 .button {
-	height: 22px;
-	width: 45px;
-	margin-left: 15px;
-	margin-right: 15px;
+	height: 1.8vh;
+	width: 3.6vh;
+	margin-left: 1.2vh;
+	margin-right: 1.2vh;
 	border-radius: 3px;
 	background-color: white;
 	box-shadow: 0 3px 0 0 #cec8c8, inset -1px -3px 10px 1px #bebebe;
@@ -184,23 +180,23 @@ input, button {
 	color: white;
 	width: 100%;
 	height: 100%;
-	padding-left: 5px;
+	padding-left: 0.4vh;
 }
 
 button {
 	font-family: calc, monospace;
-	font-size: 19px;
+	font-size: 1.3vh;
 	border-radius: 8px 5px 5px 8px;
 	border: none;
 	background-color: #272226;
 	margin: 0 0px 0px 0px;
-	height: 50px;
-	width: 60px;
+	height: 4.5vh;
+	width: 5.1vh;
 	box-shadow: 1px 4px 0 0 #222121, inset -1px -3px 10px 1px #515151;
 }
 
 button:active {
-	transform: translate(0px, 3px);
+	transform: translate(0px, 0.2vh);
 	box-shadow: none;
 }
 
@@ -212,9 +208,9 @@ strong {
 }
 
 footer {
-	padding-top: 10px;
+	padding-top: 1vh;
 	text-align: center;
-	font-size: 10px;
+	font-size: 1vh;
 	color: LightSlateGrey;
 }
 

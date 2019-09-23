@@ -2,7 +2,11 @@ let currentDisplayed = "",
     operatorLastPressed = false,
     equalsLastPressed = false;
 
-const format = s => (s.toString().length >= 10 ? parseFloat(s).toPrecision(9).toString().replace("+", "") : currentDisplayed)
+let isOn = false;
+
+const PRECISION = 10;
+
+const format = s => (s.toString().length >= PRECISION ? parseFloat(s).toPrecision(PRECISION - 1).toString().replace("+", "") : currentDisplayed)
 	.toString()
 	.replace(/(?<=\..*)0+$/g, "");
 
@@ -10,21 +14,25 @@ const toRadians = (angle) => angle * (Math.PI / 180);
 
 document.addEventListener('keypress', e => document.getElementById(e.key).click());
 
+
+
+
 /**
  * Displays the current number or operator
  * @param val the value to display
  */
 function display(val) {
+    if (!isOn) return;
     if (equalsLastPressed) currentDisplayed = "";
 
-    if (!operatorLastPressed && !equalsLastPressed && document.getElementById("calcDisplay").innerText.length >= 10) {
+    if (!operatorLastPressed && !equalsLastPressed && document.getElementById("calcDisplay").innerText.length >= PRECISION) {
         return;
     }
 
     if (operatorLastPressed || equalsLastPressed) {
         document.getElementById("calcDisplay").innerHTML = val;
     } else {
-        document.getElementById("calcDisplay").innerHTML += val;
+       document.getElementById("calcDisplay").innerHTML += val;
     }
 
     currentDisplayed += val;
@@ -33,7 +41,18 @@ function display(val) {
     equalsLastPressed = false;
 }
 
+function onSwitch() {
+    document.getElementById("calcDisplay").innerHTML = isOn ? "" : "0";
+
+    currentDisplayed = "";
+    operatorLastPressed = true;
+    equalsLastPressed = true;
+
+    isOn = !isOn;
+}
+
 function onOperator(op) {
+    if (!isOn) return;
     if (operatorLastPressed) return;
 
     if (op === "sqrt") {
@@ -46,8 +65,7 @@ function onOperator(op) {
         currentDisplayed = (s => s.toString())(Math.tan(toRadians(parseFloat(currentDisplayed))));
     } else {
         //document.getElementById("calcDisplay").innerHTML = eval(currentDisplayed);
-        document.getElementById("calcDisplay").innerHTML = format(currentDisplayed);
-        displayResult();
+        document.getElementById("calcDisplay").innerHTML  = format(currentDisplayed);
         currentDisplayed += op;
 
         operatorLastPressed = true;
@@ -57,24 +75,26 @@ function onOperator(op) {
     }
 
     //  document.getElementById("calcDisplay").innerHTML = currentDisplayed;
-    document.getElementById("calcDisplay").innerHTML = format(currentDisplayed);
+    document.getElementById("calcDisplay").innerHTML  = format(currentDisplayed);
     equalsLastPressed = true;
 }
 
 function onEquals() {
+    if (!isOn) return;
     if (operatorLastPressed) return;
 
     currentDisplayed = eval(currentDisplayed);
-    document.getElementById("calcDisplay").innerHTML = format(currentDisplayed);
+    document.getElementById("calcDisplay").innerHTML  = format(currentDisplayed);
 
     equalsLastPressed = true;
     operatorLastPressed = false;
 }
 
 function clear_s() {
+    if (!isOn) return;
     equalsLastPressed = true;
     operatorLastPressed = true;
     currentDisplayed = "";
 
-    document.getElementById("calcDisplay").innerHTML = "0";
+    document.getElementById("calcDisplay").innerHTML  = "0";
 }

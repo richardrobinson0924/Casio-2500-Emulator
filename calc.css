@@ -5,15 +5,10 @@
 body {
 	font-family: NimbusSanL, Arial, sans-serif;
 	text-align: center;
-	background-color: #000;
-	background-image: repeating-linear-gradient(
-			132deg,
-			black 100px,
-			transparent 10px,
-			black 50px,
-			transparent 0px
-	),
-	linear-gradient(50deg, #7e2e52 30%, #513a8d 60%);
+	background: #E0EAFC;  /* fallback for old browsers */
+	background: -webkit-linear-gradient(to right, #CFDEF3, #E0EAFC);  /* Chrome 10-25, Safari 5.1-6 */
+	background: linear-gradient(to right, #CFDEF3, #E0EAFC); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
@@ -77,10 +72,10 @@ div.calcDisplay {
 .switch {
 	position: relative;
 	display: inline-block;
-	width: 50px;
-	height: 54px;
-	margin-top: 12px;
-	margin-left: -30px;
+	width: 4.45vh;
+	height: 4.5vh;
+	margin-top: 0.8vh;
+	margin-left: -2.5vh;
 	border-radius: 20px;
 
 }
@@ -109,10 +104,10 @@ div.calcDisplay {
 .slider:before {
 	position: absolute;
 	content: "";
-	height: 42px;
-	width: 23px;
-	left: 4px;
-	bottom: 6px;
+	height: 3.5vh;
+	width: 1.9vh;
+	left: 0.3vh;
+	bottom: 0.5vh;
 	background-color: #403e3e;
 	-webkit-transition: .3s;
 	transition: .3s;
@@ -129,9 +124,9 @@ div.calcDisplay {
 /*}*/
 
 input:checked + .slider:before {
-	-webkit-transform: translateX(16px);
-	-ms-transform: translateX(16px);
-	transform: translateX(16px);
+	-webkit-transform: translateX(1.8vh);
+	-ms-transform: translateX(1.8vh);
+	transform: translateX(1.8vh);
 }
 
 .slider.round {

@@ -27,6 +27,15 @@ body {
 	width: 11vh;
 }
 
+.modeText {
+	word-spacing: 0.5vh;
+	//font-family: monospace;
+	font-weight: bolder;
+	font-size: 1vh;
+	margin-bottom: -1.1vh;
+	margin-left: -2.2vh;
+}
+
 .logo:before {
 	display: inline-block;
 	content: "";

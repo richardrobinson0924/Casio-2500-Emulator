@@ -43,6 +43,7 @@ function display(val) {
 
 function onSwitch() {
     document.getElementById("calcDisplay").innerHTML = isOn ? "" : "0";
+    document.getElementById("bg").style.backgroundColor = isOn ? "#8c8d4d" : "#a3a45a";
 
     currentDisplayed = "";
     operatorLastPressed = true;

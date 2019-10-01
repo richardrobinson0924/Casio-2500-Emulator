@@ -89,9 +89,9 @@ div.calcDisplay {
 	margin-bottom: -13vh;
 
 	-moz-box-shadow:
-			inset 0 0 0 0.5vh #222121,
-			inset 0 0 0 1.0vh #bebebe,
-			inset 0 0 0 2.0vh #222121;
+		inset 0 0 0 0.5vh #222121,
+		inset 0 0 0 1.0vh #bebebe,
+		inset 0 0 0 2.0vh #222121;
 
 	box-shadow:
 		inset 0 0 0 0.5vh #222121,
@@ -191,7 +191,6 @@ div.calcKeypad {
 	border: 2px solid #908b85;
 	border-radius: 10px;
 	box-shadow: 7px 10px 34px 1px rgba(0, 0, 0, 0.68), inset -1px -6px 12px 0.1px #89847e;
-
 }
 
 .input {
@@ -212,6 +211,11 @@ div.calcKeypad {
 	font-size: 1.1vh;
 	margin-bottom: 0.5vh;
 	margin-top: 0.4vh;
+}
+
+.opKey {
+	font-family: monospace;
+	font-size: 2vh;
 }
 
 .calcExtras {

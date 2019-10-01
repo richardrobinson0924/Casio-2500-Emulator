@@ -6,16 +6,14 @@ let isOn = false;
 
 const PRECISION = 10;
 
-const format = s => (s.toString().length >= PRECISION ? parseFloat(s).toPrecision(PRECISION - 1).toString().replace("+", "") : currentDisplayed)
-	.toString()
-	.replace(/(?<=\..*)0+$/g, "");
+const format = s => (s.toString().length >= PRECISION
+        ? parseFloat(s).toPrecision(PRECISION - 4).toString().replace("+", "")
+        : currentDisplayed
+    ).toString().replace(/(?<=\..*)0+$/g, "");
 
 const toRadians = (angle) => angle * (Math.PI / 180);
 
 document.addEventListener('keypress', e => document.getElementById(e.key).click());
-
-
-
 
 /**
  * Displays the current number or operator
@@ -42,8 +40,13 @@ function display(val) {
 }
 
 function onSwitch() {
-    document.getElementById("calcDisplay").innerHTML = isOn ? "" : "0";
-    document.getElementById("bg").style.backgroundColor = isOn ? "#8c8d4d" : "#a3a45a";
+    if (isOn) {
+        document.getElementById("calcDisplay").innerHTML = "";
+        document.getElementById("bg").style.backgroundColor = "#8c8d4d";
+    } else {
+        document.getElementById("calcDisplay").innerHTML = "0";
+        document.getElementById("bg").style.backgroundColor = "#a3a45a";
+    }
 
     currentDisplayed = "";
     operatorLastPressed = true;
@@ -56,23 +59,27 @@ function onOperator(op) {
     if (!isOn) return;
     if (operatorLastPressed) return;
 
-    if (op === "sqrt") {
-        currentDisplayed = (s => s.toString())(Math.sqrt(parseFloat(currentDisplayed)));
-    } else if (op === "sin") {
-        currentDisplayed = (s => s.toString())(Math.sin(toRadians(parseFloat(currentDisplayed))));
-    } else if (op === "cos") {
-        currentDisplayed = (s => s.toString())(Math.cos(toRadians(parseFloat(currentDisplayed))));
-    } else if (op === "tan") {
-        currentDisplayed = (s => s.toString())(Math.tan(toRadians(parseFloat(currentDisplayed))));
-    } else {
-        //document.getElementById("calcDisplay").innerHTML = eval(currentDisplayed);
-        document.getElementById("calcDisplay").innerHTML  = format(currentDisplayed);
-        currentDisplayed += op;
+    switch (op) {
+        case "sqrt":
+            currentDisplayed = (s => s.toString())(Math.sqrt(parseFloat(currentDisplayed)));
+            break;
+        case "sin":
+            currentDisplayed = (s => s.toString())(Math.sin(toRadians(parseFloat(currentDisplayed))));
+            break;
+        case "cos":
+            currentDisplayed = (s => s.toString())(Math.cos(toRadians(parseFloat(currentDisplayed))));
+            break;
+        case "tan":
+            currentDisplayed = (s => s.toString())(Math.tan(toRadians(parseFloat(currentDisplayed))));
+            break;
+        default: //document.getElementById("calcDisplay").innerHTML = eval(currentDisplayed);
+            document.getElementById("calcDisplay").innerHTML = format(currentDisplayed);
+            currentDisplayed += op;
 
-        operatorLastPressed = true;
-        equalsLastPressed = false;
+            operatorLastPressed = true;
+            equalsLastPressed = false;
 
-        return;
+            return;
     }
 
     //  document.getElementById("calcDisplay").innerHTML = currentDisplayed;
